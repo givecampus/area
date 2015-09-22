@@ -12,7 +12,7 @@ require 'area/string'
 module Area
 
   zip_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'zipcodes.csv'))
-  area_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'areacodes.csv'))
+  #area_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'areacodes.csv'))
 
   # there is probably a better way to do this...
   if RUBY_VERSION.to_f >= 1.9
