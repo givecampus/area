@@ -12,6 +12,7 @@ require 'area/string'
 module Area
 
   zip_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'zipcodes.csv'))
+  state_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'states.csv'))
   #area_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'areacodes.csv'))
 
   # there is probably a better way to do this...
@@ -31,6 +32,9 @@ module Area
     @zip_codes
   end
 
+  def self.state_abbr
+    CSV.read(state_path)
+  end
   #def self.regions
   #  regions = []
   #  @area_codes.map{|row| regions << row.last.upcase }
