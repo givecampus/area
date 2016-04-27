@@ -12,18 +12,18 @@ require 'area/string'
 module Area
 
   zip_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'zipcodes.csv'))
-  #state_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'states.csv'))
+  state_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'states.csv'))
   #area_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'areacodes.csv'))
 
   # there is probably a better way to do this...
   if RUBY_VERSION.to_f >= 1.9
     #@area_codes = CSV.read(area_path)
     @zip_codes = CSV.read(zip_path)
-    #@state_abbrs = CSV.read(state_path)
+    @state_abbrs = CSV.read(state_path)
   else
     #@area_codes = FasterCSV.parse(area_path)
     @zip_codes = FasterCSV.parse(zip_path)
-    #@state_abbrs = FasterCSV.parse(state_path)
+    @state_abbrs = FasterCSV.parse(state_path)
   end
 
   #def self.area_codes
@@ -34,9 +34,10 @@ module Area
     @zip_codes
   end
 
-  #def self.state_abbr
-  #  @state_abbrs
-  #end
+  def self.state_abbrs
+    @state_abbrs
+  end
+
   #def self.regions
   #  regions = []
   #  @area_codes.map{|row| regions << row.last.upcase }
