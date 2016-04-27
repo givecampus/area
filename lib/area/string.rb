@@ -48,7 +48,7 @@ class String
   end
 
   def to_state_abbr
-    if Area.state_abbrs.find {|row| row.first == self.to_s }
+    if row = Area.state_abbrs.find {|row| row.first == self.to_s }
       return row[1]
     else
       return nil
