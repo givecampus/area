@@ -47,13 +47,13 @@ class String
     end
   end
 
-  def to_state_abbr
-    if Area.state_abbr.find {|row| row.first == self.to_s }
-      return row[1]
-    else
-      return nil
-    end
-  end
+  #def to_state_abbr
+  #  if Area.state_abbr.find {|row| row.first == self.to_s }
+  #    return row[1]
+  #  else
+  #    return nil
+  #  end
+  #end
 
 
   # Public: Convert a place to a zip code.
