@@ -19,9 +19,11 @@ module Area
   if RUBY_VERSION.to_f >= 1.9
     #@area_codes = CSV.read(area_path)
     @zip_codes = CSV.read(zip_path)
+    @state_abbrs = CSV.read(state_path)
   else
     #@area_codes = FasterCSV.parse(area_path)
     @zip_codes = FasterCSV.parse(zip_path)
+    @state_abbrs = FasterCSV.parse(state_path)
   end
 
   #def self.area_codes
@@ -33,7 +35,7 @@ module Area
   end
 
   def self.state_abbr
-    CSV.read(state_path)
+    @state_abbrs
   end
   #def self.regions
   #  regions = []
